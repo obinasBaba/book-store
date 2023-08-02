@@ -1,0 +1,99 @@
+@use 'src/styles/index' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+
+  padding-bottom: 10vmax;
+
+  & :local {
+
+    .wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      max-width: 80rem;
+      padding-top: 8rem;
+
+      //border: 5px solid red;
+
+
+      .book_list {
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        flex-wrap: wrap;
+        grid-gap: 2rem 1rem;
+
+        @include s.media-breakpoint-up(md){
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        //border: 1px solid #000;
+
+        .card {
+          //border: 1px solid #000;
+
+          .thumbnail {
+            position: relative;
+            width: 1fr;
+            height: 20rem;
+
+            img {
+              width: 100%;
+              display: block;
+              aspect-ratio: 1/1;
+              object-fit: cover;
+
+            }
+          }
+
+          .detail {
+            margin-top: 1rem;
+            padding: 0 .5rem;
+
+            .price {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
+          }
+        }
+
+      }
+
+      .fetch_more {
+        position: absolute;
+        bottom: 0;
+        height: 47vmax;
+        width: 100%;
+        //background-color: red;
+        z-index: -1;
+
+        //border: 1px solid #000;
+
+      }
+
+      .loading {
+        width: 100%;
+        margin: 5rem auto 0;
+        bottom: 0;
+        display: grid;
+        place-items: center;
+        visibility: hidden;
+
+        &.visible {
+          visibility: visible;
+        }
+      }
+
+    }
+  }
+}
+
+
+

@@ -1,0 +1,24 @@
+mutation Login($input: LoginInput!) {
+  logIn(input: $input) {
+    errors {
+      message
+    }
+    user {
+      id
+      email
+      isVerified
+      role
+
+      station {
+        id
+        accountId
+      }
+
+      user {
+        id
+        accountId
+      }
+    }
+    authToken
+  }
+}

@@ -1,0 +1,115 @@
+@use 'src/styles/index' as s;
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 10vmax;
+
+
+
+  //border: 1px solid #000;
+
+
+  & :local {
+
+    .wrapper {
+      max-width: 70rem;
+      width: 100%;
+      height: 100%;
+      margin: 8vmax auto 0;
+
+      @include s.media-breakpoint-up(md){
+        margin: 6vmax auto 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper_slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+
+          @include s.media-breakpoint-up(md){
+            border-radius: 1rem;
+          }
+
+          .book_thumbnail {
+            position: relative;
+            width: 100%;
+            height: 30vmax;
+
+            img {
+              display: block;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .swiper_slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+
+      .content {
+
+        padding: 1.5rem;
+
+        .title {
+          margin-top: 3rem;
+        }
+
+
+        .detail {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 2rem auto 0;
+        }
+
+        hr {
+          margin-top: 3rem;
+          border-color: #eeeeee;
+          border-width: 2px;
+        }
+      }
+
+      .comments {
+        max-width: 40rem;
+        margin: 0 auto;
+        margin-top: 3rem;
+
+
+        .replies {
+          margin-top: 1rem;
+        }
+
+        .comment {
+          display: flex;
+          gap: 1.5rem;
+          align-items: flex-start;
+
+          .thumbnail {
+            margin-top: .5rem;
+
+            img {
+              display: block;
+            }
+          }
+
+
+        }
+      }
+
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use 'src/styles/index' as s;
+
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+
+  & :local {
+
+  }
+}
+
+
+

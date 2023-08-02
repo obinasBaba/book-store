@@ -1,0 +1,119 @@
+# This file was generated. Do not edit manually.
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+interface IAccount {
+  email: String!
+  id: String!
+  isVerified: Boolean!
+  phone: String
+  role: AccountRoles!
+  userName: String!
+}
+
+type Account implements IAccount {
+  email: String!
+  id: String!
+  isVerified: Boolean!
+  phone: String
+  role: AccountRoles!
+  userName: String!
+}
+
+type AccountPayload implements IAccount {
+  email: String!
+  id: String!
+  isVerified: Boolean!
+  phone: String
+  role: AccountRoles!
+  station: Station
+  user: User
+  userName: String!
+}
+
+type Channel {
+  id: String
+  name: String
+  stationId: String
+}
+
+type Error {
+  message: String!
+}
+
+type Mutation {
+  logIn(input: LoginInput!): ResponsePayload!
+}
+
+type Program {
+  channelId: String
+  id: String
+  name: String
+}
+
+type Query {
+  sayHello: String
+}
+
+type ResponsePayload {
+  authToken: String
+  errors: [Error!]!
+  user: AccountPayload
+}
+
+type Schedule {
+  createdAt: DateTime
+  endTime: DateTime
+  id: String
+  programId: String
+  published: Boolean
+  startTime: DateTime
+  updatedAt: DateTime
+}
+
+type Station {
+  accountId: String
+  hosts: String
+  id: String
+  name: String
+}
+
+type User {
+  accountId: String
+  email: String
+  id: String
+  name: String
+}
+
+enum AccountRoles {
+  PUBLIC_USER
+  STATION_ADMIN
+  SUPER_ADMIN
+  TESTING
+  USER
+}
+
+enum DayOfWeek {
+  FRIDAY
+  MONDAY
+  SATURDAY
+  SUNDAY
+  THURSDAY
+  TUESDAY
+  WEDNESDAY
+}
+
+"A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."
+scalar DateTime
+
+input FindOneInput {
+  userName: String!
+}
+
+input LoginInput {
+  password: String!
+  userName: String!
+}
