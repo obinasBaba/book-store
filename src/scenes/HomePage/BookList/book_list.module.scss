@@ -7,8 +7,11 @@
   display: grid;
   place-items: center;
   z-index: 1;
+  overflow: hidden;
 
-  padding-bottom: 10vmax;
+  //padding-bottom: 10vmax;
+
+  //border: 4px solid red;
 
   & :local {
 
@@ -68,7 +71,7 @@
 
       .fetch_more {
         position: absolute;
-        bottom: 0;
+        bottom: 0vmax;
         height: 47vmax;
         width: 100%;
         //background-color: red;
@@ -77,10 +80,14 @@
         //border: 1px solid #000;
 
       }
+      .no_more{
+        text-align: center;
+        margin-bottom: 4rem;
+      }
 
       .loading {
         width: 100%;
-        margin: 5rem auto 0;
+        margin: 5rem auto 8rem;
         bottom: 0;
         display: grid;
         place-items: center;

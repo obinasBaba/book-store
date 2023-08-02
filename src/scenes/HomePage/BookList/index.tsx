@@ -83,6 +83,12 @@ const BookList = () => {
           <CircularProgress size={100} />
         </div>
 
+        {!bookList.hasNextPage && !bookList.isLoading && (
+          <Typography className={s.no_more} variant="h4">
+            No more books
+          </Typography>
+        )}
+
         <div ref={fetchMoreElement} className={s.fetch_more}></div>
       </div>
     </div>
