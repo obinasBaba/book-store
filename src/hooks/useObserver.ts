@@ -17,7 +17,6 @@ const useIntersectionObserver = (
       threshold,
       // root: null,
       // rootMargin: "-20% 0px -80% 0px", // only 20% of the viewport height is visible at the top and bottom edges
-
     });
 
     if (target.current) observer.current?.observe(target.current);

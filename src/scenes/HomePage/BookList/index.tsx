@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { CircularProgress, Typography } from '@mui/material';
 import Link from 'next/link';
 import useActiveTrips from '@/actions/bookList';
-import { motion } from 'framer-motion';
 import useIntersectionObserver from '@/hooks/useObserver';
 import clsx from 'clsx';
 
@@ -40,7 +39,7 @@ const BookList = () => {
 
   return (
     <div className={s.container}>
-      <motion.div className={s.wrapper}>
+      <div className={s.wrapper}>
         <div className={s.book_list}>
           {data &&
             data.pages &&
@@ -85,7 +84,7 @@ const BookList = () => {
         </div>
 
         <div ref={fetchMoreElement} className={s.fetch_more}></div>
-      </motion.div>
+      </div>
     </div>
   );
 };

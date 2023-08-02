@@ -8,7 +8,6 @@ import ThemeProvider from '@mui/system/ThemeProvider';
 import Head from 'next/head';
 import theme from '@/theme';
 import '@global/index.scss';
-import { SessionProvider } from 'next-auth/react';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RecoilRoot } from 'recoil';

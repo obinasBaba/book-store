@@ -1,27 +1,21 @@
 import {
-  Avatar,
   Button,
   Divider,
   IconButton,
-  ListItemIcon,
   Menu,
-  MenuItem,
   Slide,
   Stack,
-  Tooltip,
   Typography,
   useScrollTrigger,
 } from '@mui/material';
 
 import Link from 'next/link';
-import React, { useEffect } from 'react';
+import React from 'react';
 import s from './topnav.module.scss';
-import { ChevronLeft, Logout, MenuBookRounded } from '@mui/icons-material';
-import { motion } from 'framer-motion';
+import { ChevronLeft, MenuBookRounded } from '@mui/icons-material';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
-import { usePopover } from '@/hooks/use-popover';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import bookStoreState from '@/store';
 
 interface Props {
@@ -78,11 +72,7 @@ export default function TopNavBar({ pageProps }: any) {
   return (
     <HideOnScroll>
       <div style={{ width: '100%', display: 'flex' }}>
-        <motion.nav
-          className={clsx([s.container])}
-          variants={navVariants}
-          transition={navTransition}
-        >
+        <nav className={clsx([s.container])}>
           {router.pathname === '/' ? (
             <Link href="/">
               <Stack
@@ -133,7 +123,7 @@ export default function TopNavBar({ pageProps }: any) {
           >
             <Divider sx={{ my: 0.5 }} />
           </Menu>
-        </motion.nav>
+        </nav>
       </div>
     </HideOnScroll>
   );
